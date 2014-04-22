@@ -1,7 +1,7 @@
 /* app css stylesheet */
 
 body {
-  padding: 20px 0;
+  padding: 80px 0;
 }
 
 .phones {
@@ -46,6 +46,10 @@ ul.phone-thumbs li {
   background-color: white;
 }
 
+.login {
+  margin-top: 10px;
+}
+
 ul.phone-thumbs img {
   height: 100px;
   width: 100px;
@@ -81,8 +85,4 @@ ul.specs dt {
 
 h1 {
   border-bottom: 1px solid gray;
-}
-
-.search {
-  margin: 50px auto;
 }
