@@ -59,7 +59,7 @@
 
   <!-- Begin Search Panel -->
   <div class="panel panel-default" ng-controller="PhoneListCtrl">
-    <div class="panel-heading">Panel heading</div>
+    <div class="panel-heading">Master the art of presenting</div>
       <div class="panel-body">
         <p>
           Welcome to Powerful Point! You can start learning about presentations by searching for a topic. Enter your query in the box below. Alternatively, use the table of contents on the left side of the page to navigate the content. Happy learning!
@@ -69,7 +69,7 @@
 
     <ul class="phones list-group">
       <li ng-repeat="chapter in chapters | emptyifblank:query | filter:query | orderBy:orderProp" class="list-item">
-        <a href="#/phones/{{chapter.id}}">{{chapter.title}}</a>
+        <a href="#/chapters/{{chapter.id}}">{{chapter.title}}</a>
         <p>{{chapter.summary}}</p>
       </li>
     </ul>
@@ -82,7 +82,7 @@
     <!-- Begin Table of Contents -->
     <div class="col-md-2" ng-controller="PhoneListCtrl">
       <ul>
-        <li ng-repeat="chapter in chapters | orderBy:OrderProp"><a href="#/phones/{{chapter.id}}">{{chapter.title}}</a></li>
+        <li ng-repeat="chapter in chapters | orderBy:OrderProp"><a href="#/chapters/{{chapter.id}}">{{chapter.title}}</a></li>
       </ul>
     </div>
     <!-- End Table of Contents -->

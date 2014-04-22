@@ -10,13 +10,9 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
     $scope.orderProp = 'age';
   }]);
 
-phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Phone',
-  function($scope, $routeParams, Phone) {
-    $scope.phone = Phone.get({phoneId: $routeParams.phoneId}, function(phone) {
-      $scope.mainImageUrl = phone.images[0];
+phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', '$http',
+  function($scope, $routeParams, $http) {
+    $http.get('chapters/' + $routeParams.chapterId + '.json').success(function(data) {
+      $scope.chapter = data;
     });
-
-    $scope.setImage = function(imageUrl) {
-      $scope.mainImageUrl = imageUrl;
-    }
   }]);
