@@ -68,9 +68,9 @@
       </div>
 
     <ul class="phones list-group">
-      <li ng-repeat="phone in phones | emptyifblank:query | filter:query | orderBy:orderProp" class="list-item">
-        <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
-        <p>{{phone.snippet}}</p>
+      <li ng-repeat="chapter in chapters | emptyifblank:query | filter:query | orderBy:orderProp" class="list-item">
+        <a href="#/phones/{{chapter.id}}">{{chapter.title}}</a>
+        <p>{{chapter.summary}}</p>
       </li>
     </ul>
   </div>
