@@ -1,7 +1,7 @@
 /* app css stylesheet */
 
 body {
-  padding-top: 20px;
+  padding: 20px 0;
 }
 
 .phones {
@@ -81,4 +81,8 @@ ul.specs dt {
 
 h1 {
   border-bottom: 1px solid gray;
+}
+
+.search {
+  margin: 50px auto;
 }

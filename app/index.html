@@ -16,6 +16,25 @@
 <body>
 
 <div class="container">
+
+  <div class="row search" ng-controller="PhoneListCtrl">
+
+    <div class="col-md-2">
+      <input ng-model="query" placeholder="Search here">
+    </div>
+
+    <div class="col-md-10">
+      <ul class="phones">
+        <li ng-repeat="phone in phones | emptyifblank:query | filter:query | orderBy:orderProp" class="thumbnail">
+          <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
+          <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
+          <p>{{phone.snippet}}</p>
+        </li>
+      </ul>
+    </div>
+
+  </div> 
+
   <div class="row">
 
     <div class="col-md-2" ng-controller="PhoneListCtrl">
@@ -29,29 +48,6 @@
 
     <div class="col-md-10">
       <div ng-view></div>
-    </div>
-
-  </div>
-
-  <div class="row" ng-controller="PhoneListCtrl">
-
-    <div class="col-md-2">
-      <input ng-model="query" placeholder="Search here">
-      Sort by:
-      <select ng-model="orderProp">
-        <option value="name">Alphabetical</option>
-        <option value="age">Newest</option>
-      </select>
-    </div>
-
-    <div class="col-md-10">
-      <ul class="phones">
-        <li ng-repeat="phone in phones | emptyifblank:query | filter:query | orderBy:orderProp" class="thumbnail">
-          <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
-          <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
-          <p>{{phone.snippet}}</p>
-        </li>
-      </ul>
     </div>
 
   </div>
