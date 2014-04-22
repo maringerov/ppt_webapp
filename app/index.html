@@ -82,7 +82,7 @@
     <!-- Begin Table of Contents -->
     <div class="col-md-2" ng-controller="PhoneListCtrl">
       <ul>
-        <li ng-repeat="phone in phones | orderBy:OrderProp"><a href="#/phones/{{phone.id}}">{{phone.name}}</a></li>
+        <li ng-repeat="chapter in chapters | orderBy:OrderProp"><a href="#/phones/{{chapter.id}}">{{chapter.title}}</a></li>
       </ul>
     </div>
     <!-- End Table of Contents -->
