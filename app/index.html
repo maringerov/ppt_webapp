@@ -81,6 +81,7 @@
 
     <!-- Begin Table of Contents -->
     <div class="col-md-2" ng-controller="PhoneListCtrl">
+      Table of Contents
       <ul>
         <li ng-repeat="chapter in chapters | orderBy:OrderProp"><a href="#/chapters/{{chapter.id}}">{{chapter.title}}</a></li>
       </ul>
@@ -88,10 +89,17 @@
     <!-- End Table of Contents -->
 
     <!-- Begin Main Content Area with Angular Tempate -->
-    <div class="col-md-10">
+    <div class="col-md-8">
       <div ng-view></div>
     </div>
     <!-- End Main Content Area -->
+
+    <!-- Begin Sidebar -->
+    <div class="col-md-2">
+      <h2>Sidebar</h2><hr>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at lacus egestas, semper justo ut, porttitor mauris. Fusce vel justo neque. Morbi et turpis id metus placerat pulvinar.</p>
+    </div>
+    <!-- End Sidebar -->
 
   </div>
   <!-- End Table of Contents and Main Area Row -->
