@@ -49,17 +49,26 @@
               <li><a href="#">One more separated link</a></li>
             </ul>
           </li>
+          <li>
+            <button type="button" class="btn btn-default navbar-btn search-btn" data-toggle="collapse" data-target="#search">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </li>
         </ul>
     
-        <button class="btn btn-primary btn-sm navbar-right login" data-toggle="modal" data-target="#myModal">Sign in</button>
+        <button class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#myModal">Sign in</button>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
   <!-- End Navbar -->
 
   <!-- Begin Search Panel -->
-  <div class="panel panel-default" ng-controller="PhoneListCtrl">
-    <div class="panel-heading">Master the art of presenting</div>
+  <div id="search" class="collapse">
+    <div class="panel panel-default" ng-controller="PhoneListCtrl">
+      <div class="panel-heading">
+        Master the art of presenting
+      </div>
+      
       <div class="panel-body">
         <p>
           Welcome to Powerful Point! You can start learning about presentations by searching for a topic. Enter your query in the box below. Alternatively, use the table of contents on the left side of the page to navigate the content. Happy learning!
@@ -67,12 +76,13 @@
         <input ng-model="query" placeholder="Search here">
       </div>
 
-    <ul class="phones list-group">
-      <li ng-repeat="chapter in chapters | emptyifblank:query | filter:query | orderBy:orderProp" class="list-item">
-        <a href="#/chapters/{{chapter.id}}">{{chapter.title}}</a>
-        <p>{{chapter.summary}}</p>
-      </li>
-    </ul>
+      <ul class="phones list-group">
+        <li ng-repeat="chapter in chapters | emptyifblank:query | filter:query | orderBy:orderProp" class="list-item">
+          <a href="#/chapters/{{chapter.id}}">{{chapter.title}}</a>
+          <p>{{chapter.summary}}</p>
+        </li>
+      </ul>
+    </div>
   </div>
   <!-- End Search Panel -->
 
