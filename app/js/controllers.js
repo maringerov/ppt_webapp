@@ -14,5 +14,6 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', '$h
   function($scope, $routeParams, $http) {
     $http.get('chapters/' + $routeParams.chapterId + '.json').success(function(data) {
       $scope.chapter = data;
+      $scope.myHTML = data.summary;
     });
   }]);
